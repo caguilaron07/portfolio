@@ -45,12 +45,12 @@ export default function Home() {
           Aguilar-Hidalgo
         </h1>
         <p className="font-heading text-lg italic text-primary">
-          Full-stack engineer building AI-native tools and products.
+          VP, Customer Experience &amp; AI Transformation at LifeMD.
         </p>
         <p className="text-sm text-muted-foreground">
-          I build complete products end to end: web apps with real auth and databases, plus MCP
-          servers that give AI agents new capabilities against systems like BlandAI, Bandwidth,
-          and Zoom Contact Center.
+          I lead enterprise AI and CX strategy for a 240-agent contact center. Outside of that, I
+          build my own products and MCP servers, including tooling for the voice and
+          contact-center platforms I work with day to day.
         </p>
         <div className="flex flex-wrap gap-2 pt-2">
           <Button asChild variant="outline" size="sm">
