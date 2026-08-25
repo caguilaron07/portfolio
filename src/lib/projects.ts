@@ -17,6 +17,7 @@ export const apps: readonly Project[] = [
     liveUrl: "https://workout-next-kappa.vercel.app",
     githubUrl: "https://github.com/caguilaron07/workout-next",
     repoPrivate: true,
+    featured: true,
   },
   {
     name: "home-rank",
@@ -51,7 +52,6 @@ export const apps: readonly Project[] = [
     stack: ["Python", "FastAPI", "Anthropic SDK", "MCP"],
     liveUrl: "https://iscreami.vercel.app",
     githubUrl: "https://github.com/caguilaron07/iscreami",
-    featured: true,
   },
 ] as const
 

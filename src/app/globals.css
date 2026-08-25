@@ -47,8 +47,8 @@
 }
 
 /*
-  Ink & Signal: near-black cool-tinted paper, one phosphor-green
-  accent reserved for "live/shipped" work, muted steel-blue as the
+  Ink & Signal: near-black cool-tinted paper, one signal-red accent
+  reserved for "live/shipped" work, muted steel-blue as the
   secondary hue for AI/MCP tooling. Dark-only by design — no toggle.
 */
 :root {
@@ -58,8 +58,8 @@
   --card-foreground: oklch(0.94 0.004 250);
   --popover: oklch(0.2 0.007 250);
   --popover-foreground: oklch(0.94 0.004 250);
-  --primary: oklch(0.78 0.19 152);
-  --primary-foreground: oklch(0.14 0.02 152);
+  --primary: oklch(0.68 0.21 27);
+  --primary-foreground: oklch(0.14 0.02 27);
   --secondary: oklch(0.24 0.008 250);
   --secondary-foreground: oklch(0.94 0.004 250);
   --muted: oklch(0.24 0.008 250);
@@ -69,21 +69,21 @@
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.78 0.19 152 / 45%);
-  --chart-1: oklch(0.78 0.19 152);
+  --ring: oklch(0.68 0.21 27 / 45%);
+  --chart-1: oklch(0.68 0.21 27);
   --chart-2: oklch(0.72 0.1 230);
-  --chart-3: oklch(0.6 0.15 152);
+  --chart-3: oklch(0.5 0.18 27);
   --chart-4: oklch(0.55 0.08 230);
   --chart-5: oklch(0.4 0.02 250);
   --radius: 0.5rem;
   --sidebar: oklch(0.2 0.007 250);
   --sidebar-foreground: oklch(0.94 0.004 250);
-  --sidebar-primary: oklch(0.78 0.19 152);
-  --sidebar-primary-foreground: oklch(0.14 0.02 152);
+  --sidebar-primary: oklch(0.68 0.21 27);
+  --sidebar-primary-foreground: oklch(0.14 0.02 27);
   --sidebar-accent: oklch(0.24 0.008 250);
   --sidebar-accent-foreground: oklch(0.94 0.004 250);
   --sidebar-border: oklch(1 0 0 / 8%);
-  --sidebar-ring: oklch(0.78 0.19 152 / 45%);
+  --sidebar-ring: oklch(0.68 0.21 27 / 45%);
 }
 
 @layer base {
