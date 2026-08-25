@@ -45,7 +45,7 @@ export default function Home() {
           Aguilar-Hidalgo
         </h1>
         <p className="font-heading text-lg italic text-primary">
-          VP, Customer Experience &amp; AI Transformation at LifeMD.
+          VP, Customer Experience &amp; AI Transformation.
         </p>
         <p className="text-sm text-muted-foreground">
           I lead enterprise AI and CX strategy for a 240-agent contact center. Outside of that, I

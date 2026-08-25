@@ -22,7 +22,7 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Carlos Aguilar-Hidalgo",
-  description: "VP, Customer Experience & AI Transformation at LifeMD. Building AI-native tools and products.",
+  description: "VP, Customer Experience & AI Transformation. Building AI-native tools and products.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
