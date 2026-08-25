@@ -5,6 +5,7 @@ export type Project = {
   readonly liveUrl?: string
   readonly githubUrl: string
   readonly repoPrivate?: boolean
+  readonly featured?: boolean
 }
 
 export const apps: readonly Project[] = [
@@ -50,6 +51,7 @@ export const apps: readonly Project[] = [
     stack: ["Python", "FastAPI", "Anthropic SDK", "MCP"],
     liveUrl: "https://iscreami.vercel.app",
     githubUrl: "https://github.com/caguilaron07/iscreami",
+    featured: true,
   },
 ] as const
 

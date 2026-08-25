@@ -1,25 +1,80 @@
+"use client"
+
+import { motion } from "framer-motion"
 import Link from "next/link"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { cn } from "@/lib/utils"
 import type { Project } from "@/lib/projects"
 
-export function ProjectCard({ project }: { project: Project }) {
+const cardMotion = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0 },
+}
+
+export function ProjectCard({
+  project,
+  accent = "primary",
+  featured = false,
+  className,
+}: {
+  project: Project
+  accent?: "primary" | "accent"
+  featured?: boolean
+  className?: string
+}) {
+  const isLive = Boolean(project.liveUrl)
+
   return (
-    <Card className="h-full">
-      <CardHeader>
-        <CardTitle className="text-lg">{project.name}</CardTitle>
-        <CardDescription>{project.description}</CardDescription>
-      </CardHeader>
-      <CardContent className="flex flex-wrap gap-1.5">
+    <motion.div
+      variants={cardMotion}
+      whileHover={{ y: featured ? -6 : -4 }}
+      transition={{ type: "spring", stiffness: 300, damping: 24 }}
+      className={cn(
+        "flex flex-col gap-4 rounded-lg border border-border bg-card p-6",
+        featured && "border-l-4 border-l-primary sm:p-8",
+        className
+      )}
+    >
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-2">
+          {isLive && (
+            <span className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-widest text-primary">
+              <span className="size-1.5 rounded-full bg-primary" aria-hidden />
+              Live
+            </span>
+          )}
+          {featured && (
+            <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+              Featured
+            </span>
+          )}
+        </div>
+        <h3 className={cn("font-heading font-medium", featured ? "text-2xl sm:text-3xl" : "text-xl")}>
+          {project.name}
+        </h3>
+        <p className={cn("text-muted-foreground", featured ? "text-base sm:text-lg" : "text-sm")}>
+          {project.description}
+        </p>
+      </div>
+
+      <div className="flex flex-wrap gap-1.5">
         {project.stack.map((tech) => (
-          <Badge key={tech} variant="secondary">
+          <Badge
+            key={tech}
+            variant="secondary"
+            className={cn(
+              "font-mono text-[11px] font-normal",
+              accent === "accent" && "text-accent"
+            )}
+          >
             {tech}
           </Badge>
         ))}
-      </CardContent>
-      <CardFooter className="flex gap-2 bg-transparent border-t-0 pt-0">
+      </div>
+
+      <div className="mt-auto flex gap-2 pt-2">
         {project.liveUrl && (
           <Button asChild size="sm">
             <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
@@ -32,7 +87,7 @@ export function ProjectCard({ project }: { project: Project }) {
             GitHub
           </Link>
         </Button>
-      </CardFooter>
-    </Card>
+      </div>
+    </motion.div>
   )
 }
