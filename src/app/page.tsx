@@ -94,10 +94,10 @@ export default function Home() {
 
         <motion.section
           variants={item}
-          className="flex flex-col gap-6 rounded-2xl border border-accent/20 bg-accent/5 p-6 sm:p-8"
+          className="flex flex-col gap-6 rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8"
         >
           <div>
-            <h2 className="font-heading text-2xl font-medium tracking-tight text-accent sm:text-3xl">
+            <h2 className="font-heading text-2xl font-medium tracking-tight text-primary sm:text-3xl">
               AI Agent &amp; MCP Tooling
             </h2>
             <p className="text-sm text-muted-foreground">
@@ -106,7 +106,7 @@ export default function Home() {
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             {tooling.map((project) => (
-              <ProjectCard key={project.name} project={project} accent="accent" />
+              <ProjectCard key={project.name} project={project} />
             ))}
           </div>
         </motion.section>

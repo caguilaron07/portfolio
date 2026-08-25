@@ -15,12 +15,10 @@ const cardMotion = {
 
 export function ProjectCard({
   project,
-  accent = "primary",
   featured = false,
   className,
 }: {
   project: Project
-  accent?: "primary" | "accent"
   featured?: boolean
   className?: string
 }) {
@@ -61,14 +59,7 @@ export function ProjectCard({
 
       <div className="flex flex-wrap gap-1.5">
         {project.stack.map((tech) => (
-          <Badge
-            key={tech}
-            variant="secondary"
-            className={cn(
-              "font-mono text-[11px] font-normal",
-              accent === "accent" && "text-accent"
-            )}
-          >
+          <Badge key={tech} variant="secondary" className="font-mono text-[11px] font-normal">
             {tech}
           </Badge>
         ))}
