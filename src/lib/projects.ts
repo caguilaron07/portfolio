@@ -2,7 +2,7 @@ export type Project = {
   readonly name: string
   readonly description: string
   readonly stack: readonly string[]
-  readonly liveUrl?: string
+  readonly screenshot?: string
   readonly githubUrl: string
   readonly repoPrivate?: boolean
   readonly featured?: boolean
@@ -14,7 +14,7 @@ export const apps: readonly Project[] = [
     description:
       "Workout tracking app with periodized program design, progressive overload automation, real-time set logging, and e1RM/volume analytics.",
     stack: ["Next.js 15", "React 19", "Prisma", "PostgreSQL", "NextAuth", "Tailwind"],
-    liveUrl: "https://workout-next-kappa.vercel.app",
+    screenshot: "/screenshots/workout-next.jpg",
     githubUrl: "https://github.com/caguilaron07/workout-next",
     repoPrivate: true,
     featured: true,
@@ -24,7 +24,7 @@ export const apps: readonly Project[] = [
     description:
       "Rental-listing evaluation tool built around a 35-criteria weighted scoring rubric for renter financial and lease risk.",
     stack: ["Vite", "React", "Neon Postgres", "Playwright"],
-    liveUrl: "https://home-rank.vercel.app",
+    screenshot: "/screenshots/home-rank.jpg",
     githubUrl: "https://github.com/caguilaron07/home-rank",
     repoPrivate: true,
   },
@@ -33,7 +33,7 @@ export const apps: readonly Project[] = [
     description:
       "Interactive portfolio backtest and stress-test simulator for exploring historical return sequences.",
     stack: ["TypeScript", "Vercel Functions"],
-    liveUrl: "https://portfolio-backtest-lab.vercel.app",
+    screenshot: "/screenshots/backtestLab.jpg",
     githubUrl: "https://github.com/caguilaron07/backtestLab",
     repoPrivate: true,
   },
@@ -41,7 +41,7 @@ export const apps: readonly Project[] = [
     name: "carePapa",
     description: "Family caregiving coordination app with JWT-based auth and Postgres-backed scheduling.",
     stack: ["Next.js 14", "Prisma", "Postgres", "Zod"],
-    liveUrl: "https://carepapa.vercel.app",
+    screenshot: "/screenshots/carePapa.jpg",
     githubUrl: "https://github.com/caguilaron07/carePapa",
     repoPrivate: true,
   },
@@ -50,7 +50,7 @@ export const apps: readonly Project[] = [
     description:
       "Extended an open-source ice cream recipe calculator with a 20-tool MCP server and Anthropic-powered ingredient enrichment that auto-fills missing nutritional data.",
     stack: ["Python", "FastAPI", "Anthropic SDK", "MCP"],
-    liveUrl: "https://iscreami.vercel.app",
+    screenshot: "/screenshots/iscreami.jpg",
     githubUrl: "https://github.com/caguilaron07/iscreami",
   },
 ] as const
