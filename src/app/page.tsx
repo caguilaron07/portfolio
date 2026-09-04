@@ -5,7 +5,8 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { ProjectCard } from "@/components/project-card"
-import { apps, tooling } from "@/lib/projects"
+import { ImpactCard } from "@/components/impact-card"
+import { apps, tooling, impact } from "@/lib/projects"
 
 const CONTACT = {
   github: "https://github.com/caguilaron07",
@@ -107,6 +108,22 @@ export default function Home() {
           <div className="grid gap-4 sm:grid-cols-3">
             {tooling.map((project) => (
               <ProjectCard key={project.name} project={project} />
+            ))}
+          </div>
+        </motion.section>
+
+        <motion.section variants={item} className="flex flex-col gap-6">
+          <div>
+            <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
+              Enterprise Impact
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              AI transformation work across a 240-agent contact center.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {impact.map((initiative) => (
+              <ImpactCard key={initiative.name} initiative={initiative} />
             ))}
           </div>
         </motion.section>

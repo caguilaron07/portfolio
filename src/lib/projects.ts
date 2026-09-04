@@ -55,6 +55,40 @@ export const apps: readonly Project[] = [
   },
 ] as const
 
+export type Initiative = {
+  readonly name: string
+  readonly description: string
+  readonly metrics?: readonly string[]
+}
+
+export const impact: readonly Initiative[] = [
+  {
+    name: "AI QA Platform",
+    description:
+      "Built an AI QA platform that replaced manual call review across a 240-agent contact center.",
+    metrics: ["93%+ match with human graders", "100% of calls reviewed"],
+  },
+  {
+    name: "Voice AI Deployment",
+    description: "Deployed voice-agent workflows across a high-volume contact center.",
+    metrics: ["190k+ calls automated", "60%+ call deflection", "6.3x ROI", "$6.75 → $0.16 cost per call"],
+  },
+  {
+    name: "Internal AI Virtual Assistants",
+    description: "Rolled out AI virtual assistants for frontline agents.",
+    metrics: ["40% reduction in average handle time"],
+  },
+  {
+    name: "BYOC SIP Migration",
+    description: "Vetted telephony vendors and led an end-to-end BYOC SIP migration with Bandwidth.",
+  },
+  {
+    name: "Legacy Systems Integration",
+    description:
+      "Connected legacy infrastructure with modern AI capabilities: two custom-built CRMs, messaging/email platforms, a ticketing system, and QA automation.",
+  },
+] as const
+
 export const tooling: readonly Project[] = [
   {
     name: "daPathMaker",
