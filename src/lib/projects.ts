@@ -3,6 +3,7 @@ export type Project = {
   readonly description: string
   readonly stack: readonly string[]
   readonly screenshot?: string
+  readonly screenshots?: readonly string[]
   readonly githubUrl: string
   readonly repoPrivate?: boolean
   readonly featured?: boolean
@@ -14,7 +15,11 @@ export const apps: readonly Project[] = [
     description:
       "Workout tracking app with periodized program design, progressive overload automation, real-time set logging, and e1RM/volume analytics.",
     stack: ["Next.js 15", "React 19", "Prisma", "PostgreSQL", "NextAuth", "Tailwind"],
-    screenshot: "/screenshots/workout-next.jpg",
+    screenshots: [
+      "/screenshots/workout-next-1.jpg",
+      "/screenshots/workout-next-2.jpg",
+      "/screenshots/workout-next-3.jpg",
+    ],
     githubUrl: "https://github.com/caguilaron07/workout-next",
     repoPrivate: true,
     featured: true,

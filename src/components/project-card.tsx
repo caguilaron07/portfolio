@@ -34,16 +34,32 @@ export function ProjectCard({
         className
       )}
     >
-      {project.screenshot && (
-        <div className="relative aspect-video w-full overflow-hidden border-b border-border bg-muted">
-          <Image
-            src={project.screenshot}
-            alt={`${project.name} screenshot`}
-            fill
-            sizes="(min-width: 640px) 50vw, 100vw"
-            className="object-cover object-top"
-          />
+      {project.screenshots ? (
+        <div className="grid grid-cols-3 gap-px overflow-hidden border-b border-border bg-border">
+          {project.screenshots.map((src) => (
+            <div key={src} className="relative aspect-[4/5] overflow-hidden bg-muted">
+              <Image
+                src={src}
+                alt={`${project.name} screenshot`}
+                fill
+                sizes="(min-width: 640px) 17vw, 33vw"
+                className="object-cover object-top"
+              />
+            </div>
+          ))}
         </div>
+      ) : (
+        project.screenshot && (
+          <div className="relative aspect-video w-full overflow-hidden border-b border-border bg-muted">
+            <Image
+              src={project.screenshot}
+              alt={`${project.name} screenshot`}
+              fill
+              sizes="(min-width: 640px) 50vw, 100vw"
+              className="object-cover object-top"
+            />
+          </div>
+        )
       )}
 
       <div className={cn("flex flex-col gap-4 p-6", featured && "sm:p-8")}>
