@@ -61,7 +61,7 @@ export default function Home() {
         </p>
         <p className="text-sm text-muted-foreground">
           I lead enterprise AI and CX strategy for a 240-agent contact center. Outside of that, I
-          build my own products and MCP servers, including tooling for the voice and
+          build my own products and MCP servers. Some of that tooling supports the voice and
           contact-center platforms I work with day to day.
         </p>
         <div className="flex flex-wrap gap-2 pt-2">

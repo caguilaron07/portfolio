@@ -49,7 +49,7 @@
 /*
   Ink & Signal: near-black cool-tinted paper, one signal-red accent
   reserved for "live/shipped" work, muted steel-blue as the
-  secondary hue for AI/MCP tooling. Dark-only by design — no toggle.
+  secondary hue for AI/MCP tooling. Dark-only by design, no toggle.
 */
 :root {
   --background: oklch(0.16 0.006 250);

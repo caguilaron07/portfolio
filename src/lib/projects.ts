@@ -98,7 +98,7 @@ export const tooling: readonly Project[] = [
   {
     name: "daPathMaker",
     description:
-      "MCP server for building and editing BlandAI voice-agent conversation pathways conversationally with Claude — 20 tools spanning pathway, node, and edge management.",
+      "MCP server for conversationally building and editing BlandAI voice-agent pathways with Claude. Twenty tools span pathway, node, and edge management.",
     stack: ["TypeScript", "MCP"],
     githubUrl: "https://github.com/caguilaron07/daPathMaker",
   },
@@ -113,7 +113,7 @@ export const tooling: readonly Project[] = [
   {
     name: "zoom-ccaas-mcp",
     description:
-      "MCP server exposing Zoom Contact Center and Number Management APIs as tools — queues, engagements, recordings, reporting, and SIP/SMS provisioning.",
+      "MCP server exposing Zoom Contact Center and Number Management APIs as tools for queues, engagements, recordings, reporting, and SIP/SMS provisioning.",
     stack: ["TypeScript", "MCP", "OAuth2"],
     githubUrl: "https://github.com/caguilaron07/zoom-ccaas-mcp",
     repoPrivate: true,
