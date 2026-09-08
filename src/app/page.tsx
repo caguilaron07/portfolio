@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
@@ -38,8 +39,18 @@ export default function Home() {
     >
       <motion.aside
         variants={item}
-        className="flex flex-col gap-4 lg:sticky lg:top-16"
+        className="flex flex-col items-center gap-4 text-center lg:sticky lg:top-16 lg:items-start lg:text-left"
       >
+        <div className="relative size-32 overflow-hidden rounded-full border border-border">
+          <Image
+            src="/headshot.jpg"
+            alt="Carlos Aguilar-Hidalgo"
+            fill
+            sizes="128px"
+            className="object-cover"
+            priority
+          />
+        </div>
         <h1 className="font-heading text-4xl font-medium tracking-tight sm:text-5xl">
           Carlos
           <br />
