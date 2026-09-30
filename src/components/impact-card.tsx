@@ -32,13 +32,18 @@ export function ImpactCard({
         <p className="text-sm text-muted-foreground">{initiative.description}</p>
       </div>
 
-      {initiative.metrics && (
+      {(initiative.metrics || initiative.scale) && (
         <div className="mt-auto flex flex-col gap-2 border-t border-border pt-4">
-          {initiative.metrics.map((metric) => (
+          {initiative.metrics?.map((metric) => (
             <span key={metric} className="font-mono text-sm font-medium text-primary">
               {metric}
             </span>
           ))}
+          {initiative.scale && (
+            <span className="font-mono text-xs text-muted-foreground">
+              {initiative.scale}
+            </span>
+          )}
         </div>
       )}
     </motion.div>

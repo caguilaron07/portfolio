@@ -7,7 +7,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ProjectCard } from "@/components/project-card"
 import { ImpactCard } from "@/components/impact-card"
-import { apps, tooling, impact } from "@/lib/projects"
+import { CareerTimeline } from "@/components/career-timeline"
+import { CaseStudyCard } from "@/components/case-study"
+import { apps, tooling, impact, careerTimeline, caseStudies } from "@/lib/projects"
 
 const CONTACT = {
   github: "https://github.com/caguilaron07",
@@ -64,6 +66,9 @@ export default function Home() {
           build my own products and MCP servers. Some of that tooling supports the voice and
           contact-center platforms I work with day to day.
         </p>
+        <p className="text-xs text-muted-foreground">
+          Enterprise work performed in HIPAA- and SOC 2-regulated environments.
+        </p>
         <div className="flex flex-wrap gap-2 pt-2">
           <Button asChild variant="outline" size="sm">
             <Link href={CONTACT.github} target="_blank" rel="noopener noreferrer">
@@ -84,15 +89,66 @@ export default function Home() {
             </Link>
           </Button>
         </div>
+        <Button asChild size="sm" className="mt-2 w-full">
+          <Link href={`mailto:${CONTACT.email}`}>
+            Open to VP/Director CX &amp; AI roles — let&apos;s talk
+          </Link>
+        </Button>
       </motion.aside>
 
       <div className="flex flex-col gap-20">
+        <motion.section variants={item} className="flex flex-col gap-6">
+          <div>
+            <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
+              Career Timeline
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Enterprise leadership across contact center and AI transformation.
+            </p>
+          </div>
+          <CareerTimeline items={careerTimeline} />
+        </motion.section>
+
+        <motion.section variants={item} className="flex flex-col gap-6">
+          <div>
+            <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
+              Enterprise Impact
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              AI transformation work across a 240-agent contact center.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {impact.map((initiative) => (
+              <ImpactCard key={initiative.name} initiative={initiative} />
+            ))}
+          </div>
+        </motion.section>
+
+        <motion.section variants={item} className="flex flex-col gap-6">
+          <div>
+            <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
+              Case Studies
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Deep dives into key enterprise transformations.
+            </p>
+          </div>
+          <div className="grid gap-4 lg:grid-cols-2">
+            {caseStudies.map((study) => (
+              <CaseStudyCard key={study.name} caseStudy={study} />
+            ))}
+          </div>
+        </motion.section>
+
         <section className="flex flex-col gap-6">
           <motion.div variants={item}>
             <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
-              Products &amp; Apps
+              Side Projects &amp; Technical Practice
             </h2>
-            <p className="text-sm text-muted-foreground">Shipped, deployed, and live.</p>
+            <p className="text-sm text-muted-foreground">
+              Hands-on products and tooling that support the work above.
+            </p>
           </motion.div>
 
           {featured && <ProjectCard project={featured} featured />}
@@ -123,22 +179,6 @@ export default function Home() {
           </div>
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col gap-6">
-          <div>
-            <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
-              Enterprise Impact
-            </h2>
-            <p className="text-sm text-muted-foreground">
-              AI transformation work across a 240-agent contact center.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {impact.map((initiative) => (
-              <ImpactCard key={initiative.name} initiative={initiative} />
-            ))}
-          </div>
-        </motion.section>
-
         <motion.footer variants={item} className="border-t border-border pt-8 text-sm text-muted-foreground">
           <p>
             {CONTACT.email} &middot;{" "}
@@ -149,7 +189,8 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               LinkedIn
-            </Link>{" "}
+            </Link>
+            {" "}
             &middot;{" "}
             <Link
               href={CONTACT.github}
@@ -159,6 +200,16 @@ export default function Home() {
             >
               GitHub
             </Link>
+          </p>
+          <p className="pt-2">
+            Open to VP/Director CX &amp; AI roles —{" "}
+            <Link
+              href={`mailto:${CONTACT.email}`}
+              className="underline underline-offset-4"
+            >
+              let&apos;s talk
+            </Link>
+            .
           </p>
         </motion.footer>
       </div>
