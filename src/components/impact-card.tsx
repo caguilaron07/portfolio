@@ -3,12 +3,8 @@
 import { motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
+import { fadeUp } from "@/lib/motion"
 import type { Initiative } from "@/lib/projects"
-
-const cardMotion = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0 },
-}
 
 export function ImpactCard({
   initiative,
@@ -19,7 +15,7 @@ export function ImpactCard({
 }) {
   return (
     <motion.div
-      variants={cardMotion}
+      variants={fadeUp}
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
       className={cn(
@@ -32,13 +28,18 @@ export function ImpactCard({
         <p className="text-sm text-muted-foreground">{initiative.description}</p>
       </div>
 
-      {initiative.metrics && (
+      {(initiative.metrics || initiative.scale) && (
         <div className="mt-auto flex flex-col gap-2 border-t border-border pt-4">
-          {initiative.metrics.map((metric) => (
+          {initiative.metrics?.map((metric) => (
             <span key={metric} className="font-mono text-sm font-medium text-primary">
               {metric}
             </span>
           ))}
+          {initiative.scale && (
+            <span className="font-mono text-xs text-muted-foreground">
+              {initiative.scale}
+            </span>
+          )}
         </div>
       )}
     </motion.div>

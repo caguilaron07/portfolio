@@ -7,12 +7,8 @@ import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { fadeUp } from "@/lib/motion"
 import type { Project } from "@/lib/projects"
-
-const cardMotion = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0 },
-}
 
 export function ProjectCard({
   project,
@@ -25,7 +21,7 @@ export function ProjectCard({
 }) {
   return (
     <motion.div
-      variants={cardMotion}
+      variants={fadeUp}
       whileHover={{ y: featured ? -6 : -4 }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
       className={cn(
