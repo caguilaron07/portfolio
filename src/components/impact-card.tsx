@@ -3,12 +3,8 @@
 import { motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
+import { fadeUp } from "@/lib/motion"
 import type { Initiative } from "@/lib/projects"
-
-const cardMotion = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0 },
-}
 
 export function ImpactCard({
   initiative,
@@ -19,7 +15,7 @@ export function ImpactCard({
 }) {
   return (
     <motion.div
-      variants={cardMotion}
+      variants={fadeUp}
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
       className={cn(

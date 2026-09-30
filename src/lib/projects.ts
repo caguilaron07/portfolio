@@ -9,6 +9,7 @@ export type Project = {
   readonly featured?: boolean
 }
 
+const SCALE_240AGENT = "240-agent contact center"
 export const apps: readonly Project[] = [
   {
     name: "workout-next",
@@ -88,25 +89,24 @@ export const impact: readonly Initiative[] = [
     description:
       "Built an AI QA platform that replaced manual call review across a 240-agent contact center.",
     metrics: ["93%+ match with human graders", "100% of calls reviewed"],
-    scale: "240-agent contact center · 4-person AI engineering team",
+    scale: `${SCALE_240AGENT} · 4-person AI engineering team`,
   },
   {
     name: "Voice AI Deployment",
     description: "Deployed voice-agent workflows across a high-volume contact center.",
     metrics: ["190k+ calls automated", "60%+ call deflection", "6.3x ROI", "$6.75 → $0.16 cost per call"],
-    scale: "240-agent contact center",
+    scale: SCALE_240AGENT,
   },
   {
     name: "Internal AI Virtual Assistants",
     description: "Rolled out AI virtual assistants for frontline agents.",
     metrics: ["40% reduction in average handle time"],
-    scale: "240-agent contact center",
+    scale: SCALE_240AGENT,
   },
   {
     name: "BYOC SIP Migration",
     description: "Vetted telephony vendors and led an end-to-end BYOC SIP migration with Bandwidth, replacing legacy Five9.",
-    metrics: ["40% reduction in average handle time"],
-    scale: "240-agent contact center",
+    scale: SCALE_240AGENT,
   },
   {
     name: "Legacy Systems Integration",
@@ -174,25 +174,25 @@ export const careerTimeline: readonly CareerTimelineItem[] = [
 
 export const caseStudies: readonly CaseStudy[] = [
   {
-    name: "QAI — AI Quality Assurance Platform",
+    name: "QAI: AI Quality Assurance Platform",
     problem: "QA coverage was a small manual call sample, missing inconsistencies across the contact center.",
     approach: "Architected and built (with a 4-person AI engineering team) an AI-driven QA platform that evaluates every interaction automatically.",
     outcome: "Expanded evaluation to 100% of interactions at 93% agreement with human graders, enabling a QA headcount reduction.",
-    scale: "240-agent contact center · 4-person AI engineering team",
+    scale: `${SCALE_240AGENT} · 4-person AI engineering team`,
   },
   {
     name: "Contact Center Platform Migration",
     problem: "Legacy Five9 environment had implementation gaps limiting automation maturity and integration capabilities.",
     approach: "Evaluated vendors, selected Zoom Contact Center and Bandwidth, and led the BYOC/SIP telephony migration end-to-end.",
     outcome: "Modernized the telephony stack supporting 240 agents and AI copilot integration, contributing to a 40% reduction in average handle time.",
-    scale: "240-agent contact center",
+    scale: SCALE_240AGENT,
   },
   {
     name: "Conversational AI Deployment",
     problem: "High call volume with no automated resolution path for intent handling, verification, account inquiries, and retention.",
     approach: "Ran proof-of-concepts, selected a vendor, and deployed customer-facing conversational AI workflows across voice channels.",
     outcome: "Handled 190K+ calls with 60%+ resolved without a live agent, delivering a 6.3x ROI.",
-    scale: "240-agent contact center",
+    scale: SCALE_240AGENT,
   },
 ] as const
 

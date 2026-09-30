@@ -3,12 +3,8 @@
 import { motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
+import { fadeUp } from "@/lib/motion"
 import type { CareerTimelineItem } from "@/lib/projects"
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0 },
-}
 
 export function CareerTimeline({
   items,
@@ -18,23 +14,21 @@ export function CareerTimeline({
   className?: string
 }) {
   return (
-    <motion.div
+    <motion.ol
       variants={{
         hidden: {},
         show: { transition: { staggerChildren: 0.06 } },
       }}
-      initial="hidden"
-      animate="show"
-      className={cn("flex flex-col", className)}
+      className={cn("flex flex-col list-none gap-2 p-0", className)}
     >
       {items.map((role, index) => (
-        <motion.div
+        <motion.li
           key={`${role.title}-${role.company}`}
-          variants={itemVariants}
+          variants={fadeUp}
           className="relative flex gap-4 pb-2.5"
         >
           {index < items.length - 1 && (
-            <div className="absolute left-2 top-2.5 bottom-0 w-px bg-border" />
+            <div className="absolute left-3 top-2.5 bottom-0 w-px -translate-x-1/2 bg-border" />
           )}
 
           <div className="flex h-6 w-6 shrink-0 items-center justify-center">
@@ -44,15 +38,15 @@ export function CareerTimeline({
           <div className="flex flex-1 flex-col gap-0.5">
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
               <p className="font-heading font-medium">{role.title}</p>
-              <p className="font-mono text-xs text-muted-foreground">
+              <p className="shrink-0 font-mono text-xs text-muted-foreground">
                 {role.dates}
               </p>
             </div>
             <p className="text-sm text-muted-foreground">{role.company}</p>
             <p className="text-sm text-muted-foreground">{role.scope}</p>
           </div>
-        </motion.div>
+        </motion.li>
       ))}
-    </motion.div>
+    </motion.ol>
   )
 }

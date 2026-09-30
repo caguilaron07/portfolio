@@ -10,6 +10,7 @@ import { ImpactCard } from "@/components/impact-card"
 import { CareerTimeline } from "@/components/career-timeline"
 import { CaseStudyCard } from "@/components/case-study"
 import { apps, tooling, impact, careerTimeline, caseStudies } from "@/lib/projects"
+import { fadeUp } from "@/lib/motion"
 
 const CONTACT = {
   github: "https://github.com/caguilaron07",
@@ -21,11 +22,6 @@ const CONTACT = {
 const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.08 } },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0 },
 }
 
 export default function Home() {
@@ -40,7 +36,7 @@ export default function Home() {
       className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-16 px-6 py-16 sm:py-24 lg:grid lg:grid-cols-[280px_1fr] lg:items-start lg:gap-16"
     >
       <motion.aside
-        variants={item}
+        variants={fadeUp}
         className="flex flex-col items-center gap-4 text-center lg:sticky lg:top-16 lg:items-start lg:text-left"
       >
         <div className="relative size-32 overflow-hidden rounded-full border border-border">
@@ -89,15 +85,15 @@ export default function Home() {
             </Link>
           </Button>
         </div>
-        <Button asChild size="sm" className="mt-2 w-full">
+        <Button asChild size="sm" className="mt-2 w-full whitespace-normal h-auto py-1.5">
           <Link href={`mailto:${CONTACT.email}`}>
-            Open to VP/Director CX &amp; AI roles — let&apos;s talk
+            Open to VP/Director CX &amp; AI roles - let&apos;s talk
           </Link>
         </Button>
       </motion.aside>
 
       <div className="flex flex-col gap-20">
-        <motion.section variants={item} className="flex flex-col gap-6">
+        <motion.section variants={fadeUp} className="flex flex-col gap-6">
           <div>
             <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
               Career Timeline
@@ -109,7 +105,7 @@ export default function Home() {
           <CareerTimeline items={careerTimeline} />
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col gap-6">
+        <motion.section variants={fadeUp} className="flex flex-col gap-6">
           <div>
             <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
               Enterprise Impact
@@ -125,7 +121,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col gap-6">
+        <motion.section variants={fadeUp} className="flex flex-col gap-6">
           <div>
             <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
               Case Studies
@@ -142,7 +138,7 @@ export default function Home() {
         </motion.section>
 
         <section className="flex flex-col gap-6">
-          <motion.div variants={item}>
+          <motion.div variants={fadeUp}>
             <h2 className="font-heading text-2xl font-medium tracking-tight sm:text-3xl">
               Side Projects &amp; Technical Practice
             </h2>
@@ -161,7 +157,7 @@ export default function Home() {
         </section>
 
         <motion.section
-          variants={item}
+          variants={fadeUp}
           className="flex flex-col gap-6 rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8"
         >
           <div>
@@ -179,7 +175,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        <motion.footer variants={item} className="border-t border-border pt-8 text-sm text-muted-foreground">
+        <motion.footer variants={fadeUp} className="border-t border-border pt-8 text-sm text-muted-foreground">
           <p>
             {CONTACT.email} &middot;{" "}
             <Link
@@ -189,28 +185,27 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               LinkedIn
-            </Link>
-            {" "}
-            &middot;{" "}
-            <Link
-              href={CONTACT.github}
-              className="underline underline-offset-4"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </Link>
-          </p>
-          <p className="pt-2">
-            Open to VP/Director CX &amp; AI roles —{" "}
-            <Link
-              href={`mailto:${CONTACT.email}`}
-              className="underline underline-offset-4"
-            >
-              let&apos;s talk
-            </Link>
-            .
-          </p>
+              </Link>{" "}
+              &middot;{" "}
+              <Link
+                href={CONTACT.github}
+                className="underline underline-offset-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </Link>
+            </p>
+            <p className="pt-2">
+              Open to VP/Director CX &amp; AI roles -{" "}
+              <Link
+                href={`mailto:${CONTACT.email}`}
+                className="underline underline-offset-4"
+              >
+                let&apos;s talk
+              </Link>
+              .
+            </p>
         </motion.footer>
       </div>
     </motion.main>
